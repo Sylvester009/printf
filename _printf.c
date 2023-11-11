@@ -17,9 +17,27 @@ int cases(va_list char_lists, char spec)
 	{
 		case 'c':
 		case 's':
+		case '%':
+			_specifiers(char_lists, spec, &char_print);
+			break;
+	}
+	return (char_print);
+}
+/**
+ * cases_complex - for complex spcifiers
+ * @char_lists: argument list
+ * @spec: specifier
+ *
+ * Return: success
+ */
+int cases_complex(va_list char_lists, char spec)
+{
+	int char_print = 0;
+
+	switch (spec)
+	{
 		case 'd':
 		case 'i':
-		case '%':
 			_specifiers(char_lists, spec, &char_print);
 			break;
 		case 'u':
@@ -50,7 +68,7 @@ int cases(va_list char_lists, char spec)
 }
 
 /**
- * _printf - produces output according to a format
+ *  _printf - produces output according to a format
  * @format: character string
  *
  * Return:  number of characters printed
@@ -69,7 +87,14 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			char_print = cases(char_lists, *format);
+			if (*format == 'c' || *format == 's' || *format == '%')
+			{
+				char_print = cases(char_lists, *format);
+			}
+			else
+			{
+				char_print += cases_complex(char_lists, *format);
+			}
 		}
 		else
 		{
