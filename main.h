@@ -4,6 +4,8 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
+int cases_complex(va_list char_lists, char spec);
+int cases(va_list char_lists, char spec);
 int _putchar(char c);
 void _specifiers(va_list char_lists, char spec, int *char_print);
 void _binary(va_list char_lists, int *char_print);
