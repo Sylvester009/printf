@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 					_specifiers(char_lists, *format, &char_print);
 					break;
 				case 'u':
-					_un_signed(char_lists, &char_print);
+					_un_sign(char_lists, &char_print);
 					break;
 				case 'o':
 					_octal(char_lists, &char_print);

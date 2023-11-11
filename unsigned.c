@@ -3,14 +3,14 @@
 #include "main.h"
 
 /**
- * _unsigned - handle %u specifier
+ * _un_sign - handle %u specifier
  * @char_lists: argument lists
  * @char_print: char to be printed
  *
  * Return: void
  */
 
-void _un_signed(va_list char_lists, int *char_print)
+void _un_sign(va_list char_lists, int *char_print)
 {
 	int i;
 	char s;
